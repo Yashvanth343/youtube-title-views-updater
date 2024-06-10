@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
 
   try {
     const result = await youtube.videos.list({
-      id: "PA2GKru3GT8", // Your video ID here
+      id: "NIkDrTzoXqA", // Your video ID here
       part: "statistics,snippet",
     });
 
@@ -28,10 +28,10 @@ module.exports = async (req, res) => {
       await youtube.videos.update({
         part: "snippet",
         requestBody: {
-          id: "PA2GKru3GT8", // Your video ID here
+          id: "NIkDrTzoXqA", // Your video ID here
           snippet: {
-            title: `This video has ${stats.viewCount} views and ${stats.dislikeCount} dislikes`,
-            description: 'updates every 10 minutes so won’t be 100% accurate,  thanks to all the tutorials/guides,  github - https://github.com/WilsonLimSet/youtube-title-views-updater, music - https://www.youtube.com/watch?v=b1W4DJd3pCo',
+            title: `This video has ${stats.viewCount} views and ${stats.likeCount} likes`,
+            description: 'updates every 10 minutes',
             categoryId: '28', // Make sure this category ID is correct
           },
         },
